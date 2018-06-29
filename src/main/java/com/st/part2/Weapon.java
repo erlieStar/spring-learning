@@ -1,16 +1,29 @@
 package com.st.part2;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
 public class Weapon {
 
-    @Value("knife")
-    // 这个值可以从外部配置文件中通过@Value注解读取到
+    @Autowired
+    ClassC classC;
+
     private String type;
 
     public String getType() {
         return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public ClassC getClassC() {
+        return classC;
+    }
+
+    public void setClassC(ClassC classC) {
+        this.classC = classC;
     }
 }
