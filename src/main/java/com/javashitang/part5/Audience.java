@@ -1,4 +1,4 @@
-package com.makenv;
+package com.javashitang.part5;
 
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ public class Audience {
     public void performance() {}
 
     //上面定义了performance就可以简写，否则得写成这样
-    //@Before("execution(** com.makenv.Performance.perform(..))")
+    //@Before("execution(** Performance.perform(..))")
     @Before("performance()")
     public void silenceCellPhones() {
         System.out.println("关掉手机");

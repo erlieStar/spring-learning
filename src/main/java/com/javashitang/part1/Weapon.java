@@ -1,4 +1,4 @@
-package com.st.part1;
+package com.javashitang.part1;
 
 public class Weapon {
 

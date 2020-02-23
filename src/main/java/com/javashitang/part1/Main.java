@@ -1,6 +1,5 @@
-package com.st.part1;
+package com.javashitang.part1;
 
-import com.st.part1.BraveKnight;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {

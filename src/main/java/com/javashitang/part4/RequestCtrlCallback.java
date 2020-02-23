@@ -1,6 +1,5 @@
-package com.st.part4;
+package com.javashitang.part4;
 
-import com.st.part3.UserServiceImpl;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;

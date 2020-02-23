@@ -1,4 +1,4 @@
-package com.st.part3;
+package com.javashitang.part3;
 
 public class UserServiceImpl implements UserService {
 

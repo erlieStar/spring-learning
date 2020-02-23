@@ -1,6 +1,7 @@
 package com.makenv;
 
-import com.st.part1.BraveKnight;
+import com.javashitang.part5.ConcertConfig;
+import com.javashitang.part5.Performance;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.st.part2;
+package com.javashitang.part2;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

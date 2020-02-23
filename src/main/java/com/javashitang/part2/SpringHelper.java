@@ -1,4 +1,4 @@
-package com.st.part2;
+package com.javashitang.part2;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

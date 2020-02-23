@@ -1,4 +1,4 @@
-package com.st.part2;
+package com.javashitang.part2;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

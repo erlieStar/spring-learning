@@ -7,11 +7,11 @@
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-	<bean id="knight" class="com.st.part1.BraveKnight">
+	<bean id="knight" class="com.javashitang.part1.BraveKnight">
 		<constructor-arg ref="weapon"/>
 	</bean>
 
-	<bean id="weapon" class="com.st.part1.Weapon">
+	<bean id="weapon" class="com.javashitang.part1.Weapon">
 		<property name="type" value="knife"/>
 	</bean>
 </beans>

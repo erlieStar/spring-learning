@@ -1,4 +1,4 @@
-package com.makenv;
+package com.javashitang.part5;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

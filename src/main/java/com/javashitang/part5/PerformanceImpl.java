@@ -1,4 +1,4 @@
-package com.makenv;
+package com.javashitang.part5;
 
 import org.springframework.stereotype.Component;
 
