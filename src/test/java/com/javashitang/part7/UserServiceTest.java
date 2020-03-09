@@ -1,25 +1,20 @@
-package com.makenv;
+package com.javashitang.part7;
 
-
-import com.javashitang.part1.BraveKnight;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
-// 多个文件时可用locations = {"", ""}
-@ContextConfiguration(locations = "classpath*:/applicationContext.xml")
-public class XMLTest {
+@ContextConfiguration(classes = AppConfig.class)
+public class UserServiceTest {
 
     @Autowired
-    BraveKnight braveKnight;
+    private UserService userService;
 
     @Test
     public void test() {
-        // knife
-        System.out.println(braveKnight.getWeapon().getType());
+        userService.addUser("小识", "山西");
     }
 }

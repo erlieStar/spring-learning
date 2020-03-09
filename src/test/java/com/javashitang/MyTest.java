@@ -1,4 +1,4 @@
-package com.makenv;
+package com.javashitang;
 
 import org.junit.Test;
 

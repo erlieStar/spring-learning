@@ -1,16 +1,18 @@
-package com.makenv;
+package com.javashitang;
 
-import com.javashitang.part2.BraveKnight;
-import com.javashitang.part2.MyConfig;
+
+import com.javashitang.part1.BraveKnight;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = MyConfig.class)
-public class AnnotaionTest {
+// 多个文件时可用locations = {"", ""}
+@ContextConfiguration(locations = "classpath*:/applicationContext.xml")
+public class XMLTest {
 
     @Autowired
     BraveKnight braveKnight;
