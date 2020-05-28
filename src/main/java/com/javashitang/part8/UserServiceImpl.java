@@ -13,4 +13,9 @@ public class UserServiceImpl implements UserService {
     public String getUsername() {
         return "username";
     }
+
+    @Override
+    public String getLocation(String location) {
+        return "location";
+    }
 }

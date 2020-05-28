@@ -37,4 +37,30 @@ public class UserControllerTest {
         String username = userController.getUsername();
         System.out.println(username);
     }
+
+    @Test
+    public void getLocation1() throws Exception {
+
+        userService = EasyMock.createMock(UserService.class);
+        EasyMock.expect(userService.getUsername()).andReturn("test");
+        Field userServiceField = userController.getClass().getDeclaredField("userService");
+        userServiceField.setAccessible(true);
+        userServiceField.set(userController, userService);
+        EasyMock.replay(userService);
+        String username = userController.getUsername();
+        System.out.println(username);
+    }
+
+    @Test
+    public void getLocation2() throws Exception {
+
+        userService = EasyMock.createMock(UserService.class);
+        EasyMock.expect(userService.getLocation(EasyMock.anyString())).andReturn("testLocation");
+        Field userServiceField = userController.getClass().getDeclaredField("userService");
+        userServiceField.setAccessible(true);
+        userServiceField.set(userController, userService);
+        EasyMock.replay(userService);
+        String username = userController.getLocation("li");
+        System.out.println(username);
+    }
 }

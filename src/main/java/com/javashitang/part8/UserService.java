@@ -1,6 +1,5 @@
 package com.javashitang.part8;
 
-import org.springframework.stereotype.Service;
 
 /**
  * @author lilimin
@@ -9,4 +8,6 @@ import org.springframework.stereotype.Service;
 public interface UserService {
 
     String getUsername();
+
+    String getLocation(String location);
 }

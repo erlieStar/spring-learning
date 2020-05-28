@@ -16,4 +16,8 @@ public class UserController {
     public String getUsername() {
         return userService.getUsername();
     }
+
+    public String getLocation(String name) {
+        return userService.getLocation(name);
+    }
 }
