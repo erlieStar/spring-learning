@@ -18,4 +18,9 @@ public class UserServiceImpl implements UserService {
     public String getLocation(String location) {
         return "location";
     }
+
+    @Override
+    public boolean saveUserInfo(UserInfo userInfo) {
+        return false;
+    }
 }

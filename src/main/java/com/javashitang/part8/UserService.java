@@ -10,4 +10,6 @@ public interface UserService {
     String getUsername();
 
     String getLocation(String location);
+
+    boolean saveUserInfo(UserInfo userInfo);
 }

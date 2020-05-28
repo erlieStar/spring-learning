@@ -20,4 +20,8 @@ public class UserController {
     public String getLocation(String name) {
         return userService.getLocation(name);
     }
+
+    public boolean saveUserInfo(UserInfo userInfo) {
+        return userService.saveUserInfo(userInfo);
+    }
 }

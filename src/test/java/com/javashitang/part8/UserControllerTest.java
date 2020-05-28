@@ -52,15 +52,17 @@ public class UserControllerTest {
     }
 
     @Test
-    public void getLocation2() throws Exception {
+    public void saveUserInfo() throws Exception {
 
         userService = EasyMock.createMock(UserService.class);
-        EasyMock.expect(userService.getLocation(EasyMock.anyString())).andReturn("testLocation");
+        EasyMock.expect(userService.saveUserInfo(EasyMock.anyObject())).andReturn(true);
+        UserInfo userInfo = new UserInfo();
         Field userServiceField = userController.getClass().getDeclaredField("userService");
         userServiceField.setAccessible(true);
         userServiceField.set(userController, userService);
         EasyMock.replay(userService);
-        String username = userController.getLocation("li");
-        System.out.println(username);
+        boolean flag = userController.saveUserInfo(userInfo);
+        System.out.println(flag);
+        assertTrue(flag);
     }
 }
