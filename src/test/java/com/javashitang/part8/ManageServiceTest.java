@@ -35,6 +35,7 @@ public class ManageServiceTest {
         EasyMock.replay(userService);
         String username = manageService.getUsername();
         System.out.println(username);
+        assertEquals(username, "test");
     }
 
     @Test
@@ -55,12 +56,11 @@ public class ManageServiceTest {
 
         userService = EasyMock.createMock(UserService.class);
         EasyMock.expect(userService.saveUserInfo(EasyMock.anyObject())).andReturn(true);
-        UserInfo userInfo = new UserInfo();
         Field userServiceField = manageService.getClass().getDeclaredField("userService");
         userServiceField.setAccessible(true);
         userServiceField.set(manageService, userService);
         EasyMock.replay(userService);
-        boolean flag = manageService.saveUserInfo(userInfo);
+        boolean flag = manageService.saveUserInfo(EasyMock.anyObject());
         System.out.println(flag);
         assertTrue(flag);
     }
