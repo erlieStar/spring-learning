@@ -1,6 +1,5 @@
 package com.javashitang.part8;
 
-import com.javashitang.part8.AppConfig;
 import org.easymock.EasyMock;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,10 +17,10 @@ import static org.junit.Assert.*;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = AppConfig.class)
-public class UserControllerTest {
+public class ManageServiceTest {
 
     @Autowired
-    private UserController userController;
+    private ManageService manageService;
 
     private UserService userService;
 
@@ -30,11 +29,11 @@ public class UserControllerTest {
 
         userService = EasyMock.createMock(UserService.class);
         EasyMock.expect(userService.getUsername()).andReturn("test");
-        Field userServiceField = userController.getClass().getDeclaredField("userService");
+        Field userServiceField = manageService.getClass().getDeclaredField("userService");
         userServiceField.setAccessible(true);
-        userServiceField.set(userController, userService);
+        userServiceField.set(manageService, userService);
         EasyMock.replay(userService);
-        String username = userController.getUsername();
+        String username = manageService.getUsername();
         System.out.println(username);
     }
 
@@ -43,11 +42,11 @@ public class UserControllerTest {
 
         userService = EasyMock.createMock(UserService.class);
         EasyMock.expect(userService.getUsername()).andReturn("test");
-        Field userServiceField = userController.getClass().getDeclaredField("userService");
+        Field userServiceField = manageService.getClass().getDeclaredField("userService");
         userServiceField.setAccessible(true);
-        userServiceField.set(userController, userService);
+        userServiceField.set(manageService, userService);
         EasyMock.replay(userService);
-        String username = userController.getUsername();
+        String username = manageService.getUsername();
         System.out.println(username);
     }
 
@@ -57,11 +56,11 @@ public class UserControllerTest {
         userService = EasyMock.createMock(UserService.class);
         EasyMock.expect(userService.saveUserInfo(EasyMock.anyObject())).andReturn(true);
         UserInfo userInfo = new UserInfo();
-        Field userServiceField = userController.getClass().getDeclaredField("userService");
+        Field userServiceField = manageService.getClass().getDeclaredField("userService");
         userServiceField.setAccessible(true);
-        userServiceField.set(userController, userService);
+        userServiceField.set(manageService, userService);
         EasyMock.replay(userService);
-        boolean flag = userController.saveUserInfo(userInfo);
+        boolean flag = manageService.saveUserInfo(userInfo);
         System.out.println(flag);
         assertTrue(flag);
     }
