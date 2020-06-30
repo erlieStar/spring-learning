@@ -19,4 +19,11 @@ public class LocationServiceImpl implements LocationService {
         jdbcTemplate.update(sql, new Object[]{location});
         throw new RuntimeException("保存地址异常");
     }
+
+    @Override
+    public void addLocationNoT(String location) {
+        String sql = "insert into location (`name`) values (?)";
+        jdbcTemplate.update(sql, new Object[]{location});
+        throw new RuntimeException("保存地址异常");
+    }
 }

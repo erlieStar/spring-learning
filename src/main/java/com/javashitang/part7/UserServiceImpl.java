@@ -20,10 +20,6 @@ public class UserServiceImpl implements UserService {
     public void addUser(String name, String location) {
         String sql = "insert into user (`name`) values (?)";
         jdbcTemplate.update(sql, new Object[]{name});
-        try {
-            locationService.addLocation(location);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        locationService.addLocationNoT(location);
     }
 }
