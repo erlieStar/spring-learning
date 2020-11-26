@@ -47,19 +47,25 @@ public class ManageServiceTest {
 
         // userService mock
         userService = EasyMock.createMock(UserService.class);
-        EasyMock.expect(userService.getUsername()).andReturn("test");
+        EasyMock.expect(userService.getLocation("1")).andReturn("1");
+        EasyMock.expect(userService.getLocation("2")).andReturn("2");
         Field userServiceField = manageService.getClass().getDeclaredField("userService");
         userServiceField.setAccessible(true);
         userServiceField.set(manageService, userService);
         EasyMock.replay(userService);
 
-        String username = manageService.getUsername();
-        System.out.println(username);
+        String location = manageService.getLocation("1");
+        System.out.println(location);
+        location = manageService.getLocation("2");
+        System.out.println(location);
     }
 
     @Test
     public void saveUserInfo() throws Exception {
 
+        // EasyMock.anyBoolean();
+        // EasyMock.anyString();
+        // asyMock.anyObject();
         userService = EasyMock.createMock(UserService.class);
         EasyMock.expect(userService.saveUserInfo(EasyMock.anyObject())).andReturn(true);
         Field userServiceField = manageService.getClass().getDeclaredField("userService");
