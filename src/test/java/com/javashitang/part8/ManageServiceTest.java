@@ -29,12 +29,14 @@ public class ManageServiceTest {
     @Test
     public void getUsername() throws Exception {
 
+        // userService mock
         userService = EasyMock.createMock(UserService.class);
         EasyMock.expect(userService.getUsername()).andReturn("test");
         Field userServiceField = manageService.getClass().getDeclaredField("userService");
         userServiceField.setAccessible(true);
         userServiceField.set(manageService, userService);
         EasyMock.replay(userService);
+
         String username = manageService.getUsername();
         System.out.println(username);
         assertEquals(username, "test");
@@ -43,12 +45,14 @@ public class ManageServiceTest {
     @Test
     public void getLocation1() throws Exception {
 
+        // userService mock
         userService = EasyMock.createMock(UserService.class);
         EasyMock.expect(userService.getUsername()).andReturn("test");
         Field userServiceField = manageService.getClass().getDeclaredField("userService");
         userServiceField.setAccessible(true);
         userServiceField.set(manageService, userService);
         EasyMock.replay(userService);
+
         String username = manageService.getUsername();
         System.out.println(username);
     }
@@ -62,6 +66,7 @@ public class ManageServiceTest {
         userServiceField.setAccessible(true);
         userServiceField.set(manageService, userService);
         EasyMock.replay(userService);
+
         boolean flag = manageService.saveUserInfo(EasyMock.anyObject());
         System.out.println(flag);
         assertTrue(flag);
@@ -78,6 +83,7 @@ public class ManageServiceTest {
         userServiceField.setAccessible(true);
         userServiceField.set(manageService, userService);
         EasyMock.replay(userService);
+
         List<String> usernameList = manageService.getUsernameList("1");
         System.out.println(usernameList);
     }
