@@ -74,6 +74,7 @@ public class ManageServiceTest {
 
     @Test
     public void getUsernameList() throws Exception {
+
         List<String> nameList = new ArrayList<>();
         nameList.add("7");
         nameList.add("8");
