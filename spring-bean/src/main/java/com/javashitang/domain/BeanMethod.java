@@ -17,32 +17,32 @@ public class BeanMethod implements InitializingBean, DisposableBean {
 		System.out.println("构造方法");
 	}
 
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("@PostConstruct v1");
+    }
+
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("InitializingBean#afterPropertiesSet");
-	}
-
-	@PostConstruct
-	public void postConstruct() {
-		System.out.println("@PostConstruct");
+		System.out.println("InitializingBean#afterPropertiesSet v2");
 	}
 
 	public void customerInit() {
-		System.out.println("customerInit");
+		System.out.println("customerInit v3");
 	}
+
+    @PreDestroy
+    public void preDestroy() {
+        System.out.println("@PreDestroy v4");
+    }
 
 
 	@Override
 	public void destroy() throws Exception {
-		System.out.println("DisposableBean#destroy");
+		System.out.println("DisposableBean#destroy v5");
 	}
 
 	public void customerDestroy() {
-		System.out.println("customerDestroy");
-	}
-
-	@PreDestroy
-	public void preDestroy() {
-		System.out.println("@PreDestroy");
+		System.out.println("customerDestroy v6");
 	}
 }

@@ -11,13 +11,12 @@ import lombok.ToString;
 @ToString
 public class User {
 
-	private Long id;
-	private String name;
+    private Long id;
+    private String name;
 
-	public static User createUser() {
-		User user = new User();
-		user.setId(1L);
-		user.setName("li");
-		return user;
-	}
+    public User() {
+        System.out.println("User 构造函数");
+    }
+
 }
+

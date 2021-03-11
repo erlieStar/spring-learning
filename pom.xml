@@ -12,6 +12,7 @@
     <modules>
         <module>spring-bean</module>
         <module>spring-auction</module>
+        <module>bean-lifecycle</module>
     </modules>
 
     <properties>
