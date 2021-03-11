@@ -6,17 +6,11 @@
         <artifactId>spring-learning</artifactId>
         <groupId>com.javashitang</groupId>
         <version>1.0</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-bean</artifactId>
 
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
-    </dependencies>
 </project>
