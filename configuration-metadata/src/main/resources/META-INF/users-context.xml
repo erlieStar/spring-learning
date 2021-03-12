@@ -7,6 +7,6 @@
         http://www.javashitang.com/schema/users
         http://www.javashitang.com/schema/users.xsd">
 
-    <users:user id="1" name="小马哥"/>
+    <users:user id="1" name="小识"/>
 
 </beans>
