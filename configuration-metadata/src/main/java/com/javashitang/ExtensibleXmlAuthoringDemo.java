@@ -29,6 +29,7 @@ public class ExtensibleXmlAuthoringDemo {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("META-INF/users-context.xml");
         context.refresh();
+        // User(id=1, name=小识)
         System.out.println(context.getBean(User.class));
     }
 }
