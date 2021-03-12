@@ -1,2 +1,2 @@
 ## 定义 namespace 与 NamespaceHandler 的映射
-http\://time.geekbang.org/schema/users=com.javashitang.UsersNamespaceHandler
+http\://www.javashitang.com/schema/users=com.javashitang.UsersNamespaceHandler

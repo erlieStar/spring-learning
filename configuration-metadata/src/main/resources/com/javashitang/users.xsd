@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xsd:schema xmlns="http://time.geekbang.org/schema/users"
+<xsd:schema xmlns="http://www.javashitang.com/schema/users"
             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="http://time.geekbang.org/schema/users">
+            targetNamespace="http://www.javashitang.com/schema/users">
 
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
 
