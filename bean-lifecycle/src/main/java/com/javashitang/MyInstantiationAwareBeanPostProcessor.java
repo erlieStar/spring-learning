@@ -16,7 +16,6 @@ import java.beans.PropertyDescriptor;
  * @author lilimin
  * @since 2021-03-11
  */
-@Component
 public class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
 
     /**
