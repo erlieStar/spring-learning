@@ -1,7 +1,5 @@
 package com.javashitang;
 
-import javafx.beans.binding.ObjectExpression;
-
 import java.util.EventListener;
 import java.util.EventObject;
 import java.util.Observable;
