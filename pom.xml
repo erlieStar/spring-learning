@@ -15,6 +15,7 @@
         <module>bean-lifecycle</module>
         <module>configuration-metadata</module>
         <module>event</module>
+        <module>annotation</module>
     </modules>
 
     <properties>
