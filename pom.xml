@@ -16,7 +16,8 @@
         <module>configuration-metadata</module>
         <module>event</module>
         <module>annotation</module>
-      <module>conversion</module>
+        <module>conversion</module>
+        <module>validation</module>
     </modules>
 
     <properties>
