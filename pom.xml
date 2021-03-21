@@ -18,6 +18,7 @@
         <module>annotation</module>
         <module>conversion</module>
         <module>validation</module>
+        <module>question</module>
     </modules>
 
     <properties>
