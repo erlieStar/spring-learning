@@ -1,4 +1,4 @@
-package com.javashitang;
+package com.javashitang.importAware;
 
 import org.springframework.context.annotation.Import;
 
@@ -9,12 +9,12 @@ import java.lang.annotation.Target;
 
 /**
  * @author lilimin
- * @since 2021-03-17
+ * @since 2021-03-30
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-//@Import(HelloWorldConfiguration.class)
-@Import(HelloWorldImportSelector.class)
-//@Import(HelloWorldImportBeanDefinitionRegistrar.class)
-public @interface EnableHelloWorld {
+@Import(ProxyConfiguration.class)
+public @interface EnableProxy {
+
+    String mode() default "jdk";
 }
