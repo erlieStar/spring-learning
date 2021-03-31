@@ -19,6 +19,7 @@
         <module>conversion</module>
         <module>validation</module>
         <module>question</module>
+        <module>ioc-container-overview</module>
     </modules>
 
     <properties>
