@@ -20,6 +20,7 @@
         <module>validation</module>
         <module>question</module>
         <module>ioc-container-overview</module>
+        <module>transactional</module>
     </modules>
 
     <properties>
