@@ -6,8 +6,8 @@ import com.javashitang.domain.User;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.PropertyValues;
+import org.springframework.beans.factory.SmartInitializingSingleton;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
-import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 
 import java.beans.PropertyDescriptor;
@@ -16,7 +16,7 @@ import java.beans.PropertyDescriptor;
  * @author lilimin
  * @since 2021-03-11
  */
-public class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
+public class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor, SmartInitializingSingleton {
 
     /**
      * 实例化前阶段
@@ -99,6 +99,12 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
             student.setDescription("v7");
             System.out.println("v7");
         }
+        System.out.println("初始化后阶段------");
         return bean;
+    }
+
+    @Override
+    public void afterSingletonsInstantiated() {
+        System.out.println("finish init----------");
     }
 }
