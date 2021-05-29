@@ -14,9 +14,6 @@ import javax.annotation.Resource;
 @ToString
 public class Animal implements BeanNameAware {
 
-    @Resource
-    private User user;
-
     private String name;
     private Long speed;
 
