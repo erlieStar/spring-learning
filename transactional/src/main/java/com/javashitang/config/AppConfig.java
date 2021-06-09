@@ -25,7 +25,7 @@ public class AppConfig {
     public DruidDataSource dataSource() {
         DruidDataSource ds = new DruidDataSource();
         ds.setDriverClassName("com.mysql.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://myad:3306/test?characterEncoding=utf8&useSSL=true");
+        ds.setUrl("jdbc:mysql://myhost:3306/test?characterEncoding=utf8&useSSL=true");
         ds.setUsername("test");
         ds.setPassword("test");
         ds.setInitialSize(5);
