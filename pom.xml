@@ -21,6 +21,7 @@
         <module>question</module>
         <module>ioc-container-overview</module>
         <module>transactional</module>
+        <module>aop-demystify</module>
     </modules>
 
     <properties>
