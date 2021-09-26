@@ -30,6 +30,7 @@ public class AdviceDemo {
         ProxyFactory proxyFactory = new ProxyFactory(new HashMap());
         proxyFactory.addAdvisor(advisor);
         Map<String, String> proxyMap = (Map<String, String>) proxyFactory.getProxy();
+        // 当前存放的key为 a，值为 a
         proxyMap.put("a", "a");
     }
 }

@@ -27,6 +27,8 @@ public class CglibDynamicProxyDemo {
             }
         });
         EchoService echoService = (EchoService) enhancer.create();
+        // cost 29
+        // hello world
         System.out.println(echoService.echo("hello world"));
     }
 }

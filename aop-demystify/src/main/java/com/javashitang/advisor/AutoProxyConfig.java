@@ -2,12 +2,9 @@ package com.javashitang.advisor;
 
 import com.javashitang.proxy.DefaultEchoService;
 import com.javashitang.proxy.EchoService;
-import org.aopalliance.aop.Advice;
 import org.springframework.aop.Advisor;
-import org.springframework.aop.Pointcut;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
-import org.springframework.aop.support.DefaultPointcutAdvisor;
-import org.springframework.aop.support.NameMatchMethodPointcut;
+import org.springframework.aop.support.NameMatchMethodPointcutAdvisor;
 import org.springframework.context.annotation.Bean;
 
 /**
@@ -16,28 +13,24 @@ import org.springframework.context.annotation.Bean;
  */
 public class AutoProxyConfig {
 
+    // 创建代理对象
     @Bean
     public EchoService echoService() {
         return new DefaultEchoService();
     }
 
-    @Bean
-    public Pointcut pointcut() {
-        NameMatchMethodPointcut pointcut = new NameMatchMethodPointcut();
-        pointcut.setMappedName("echo");
-        return pointcut;
-    }
-
+    // 创建advice
     @Bean
     public CostMethodInterceptor costInterceptor() {
         return new CostMethodInterceptor();
     }
 
+    // 使用pointcut和advice创建advisor
     @Bean
-    public Advisor advisor(Pointcut pointcut, Advice advice) {
-        DefaultPointcutAdvisor advisor = new DefaultPointcutAdvisor();
-        advisor.setPointcut(pointcut);
-        advisor.setAdvice(advice);
+    public Advisor advisor() {
+        NameMatchMethodPointcutAdvisor advisor = new NameMatchMethodPointcutAdvisor();
+        advisor.setMappedName("echo");
+        advisor.setAdvice(costInterceptor());
         return advisor;
     }
 

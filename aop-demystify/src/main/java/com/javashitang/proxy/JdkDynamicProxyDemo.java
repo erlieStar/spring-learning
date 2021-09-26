@@ -14,6 +14,8 @@ public class JdkDynamicProxyDemo {
                 new Class[]{EchoService.class},
                 new CostInvocationHandler(new DefaultEchoService()));
         EchoService echoService = (EchoService) proxy;
+        // cost 0
+        // hello world
         System.out.println(echoService.echo("hello world"));
     }
 }
