@@ -7,7 +7,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @author lilimin
  * @since 2021-09-27
  */
-@EnableAspectJAutoProxy(exposeProxy = true)
+@EnableAspectJAutoProxy
 public class InvalidDemo {
 
     public static void main(String[] args) {
