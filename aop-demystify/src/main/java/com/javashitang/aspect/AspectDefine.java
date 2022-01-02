@@ -1,6 +1,7 @@
 package com.javashitang.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -16,6 +17,9 @@ public class AspectDefine {
     @Pointcut("execution(* com.javashitang.proxy.EchoService.echo(..))")
     public void pointcutName() {}
 
+    @Pointcut("execution(* com.javashitang.proxy.UserService.getUser(..))")
+    public void userPointcut() {};
+
     @Around("pointcutName()")
     public Object calCost(ProceedingJoinPoint joinPoint) throws Throwable {
         long startTime = System.currentTimeMillis();
@@ -28,5 +32,10 @@ public class AspectDefine {
     @Before("pointcutName()")
     public void beforeMethod() {
         System.out.println("beforeMethod");
+    }
+
+    @After("userPointcut()")
+    public void afterMethod() {
+        System.out.println("afterMethod");
     }
 }
