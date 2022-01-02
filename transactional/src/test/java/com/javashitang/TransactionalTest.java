@@ -59,4 +59,9 @@ public class TransactionalTest {
             System.out.println("count is not 0");
         }
     }
+
+    @Test
+    public void v1() {
+        userService.addUser("test", "test");
+    }
 }
