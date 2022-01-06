@@ -1,7 +1,6 @@
 package com.javashitang.transactional;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,7 +14,6 @@ import javax.sql.DataSource;
  * @author lilimin
  * @since 2021-09-25
  */
-@EnableCaching
 @EnableTransactionManagement
 @EnableAspectJAutoProxy
 public class AspectJConfig {

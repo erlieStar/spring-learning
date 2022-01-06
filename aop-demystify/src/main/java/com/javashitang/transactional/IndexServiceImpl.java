@@ -13,6 +13,7 @@ public class IndexServiceImpl implements IndexService {
     @Transactional(rollbackFor = Exception.class)
     @Override
     public String index() {
+        System.out.println("index");
         return "index";
     }
 }
