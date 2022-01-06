@@ -10,4 +10,9 @@ public class CarServiceImpl implements CarService {
     public String getCar() {
         return "car";
     }
+
+    @Override
+    public String getBrand() {
+        return "brand";
+    }
 }

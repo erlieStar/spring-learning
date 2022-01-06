@@ -6,4 +6,5 @@ package com.javashitang.simple;
  */
 public interface CarService {
     String getCar();
+    String getBrand();
 }
