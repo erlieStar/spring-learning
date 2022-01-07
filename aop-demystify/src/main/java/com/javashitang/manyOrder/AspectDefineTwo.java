@@ -1,4 +1,4 @@
-package com.javashitang.order;
+package com.javashitang.manyOrder;
 
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
@@ -12,19 +12,19 @@ import org.springframework.core.annotation.Order;
  */
 @Order(1)
 @Aspect
-public class AspectDefineOne {
+public class AspectDefineTwo {
 
     @Pointcut("execution(* com.javashitang.transactional.IndexService.index(..))")
-    public void a() {};
+    public void b() {};
 
-    @Before("a()")
+    @Before("b()")
     public void beforeMethod() {
-        System.out.println("a beforeMethod");
+        System.out.println("b beforeMethod");
     }
 
-    @After("a()")
+    @After("b()")
     public void afterMethod() {
-        System.out.println("a afterMethod");
+        System.out.println("b afterMethod");
     }
 
 }
