@@ -13,9 +13,15 @@ import java.util.Map;
  * @author lilimin
  * @since 2022-01-07
  */
-public class DependencyDemoV1 {
+public class DependencyDemoV3 {
 
     private static final Map<String, Object> singletonObjects =
+            new HashMap<>(256);
+
+    private static final Map<String, Object> earlySingletonObjects =
+            new HashMap<>(256);
+
+    private static final Map<String, ObjectFactory<?>> singletonFactories =
             new HashMap<>(256);
 
     @SneakyThrows
@@ -24,9 +30,21 @@ public class DependencyDemoV1 {
         if (singletonObjects.containsKey(beanName)) {
             return (T) singletonObjects.get(beanName);
         }
+        if (earlySingletonObjects.containsKey(beanName)) {
+            return (T) earlySingletonObjects.get(beanName);
+        }
+        ObjectFactory<?> singletonFactory = singletonFactories.get(beanName);
+        if (singletonFactory != null) {
+            return (T) singletonFactory.getObject();
+        }
         // 实例化bean
         Object object = beanClass.getDeclaredConstructor().newInstance();
-        singletonObjects.put(beanName, object);
+        singletonFactories.put(beanName, () -> {
+            Object proxy = createProxy(object);
+            singletonFactories.remove(beanName);
+            earlySingletonObjects.put(beanName, proxy);
+            return proxy;
+        });
         // 开始初始化bean，即填充属性
         Field[] fields = object.getClass().getDeclaredFields();
         for (Field field : fields) {
@@ -35,7 +53,17 @@ public class DependencyDemoV1 {
             Class<?> fieldClass = field.getType();
             field.set(object, getBean(fieldClass));
         }
+        createProxy(object);
+        singletonObjects.put(beanName, object);
+        earlySingletonObjects.remove(beanName);
         return (T) object;
+    }
+
+    public static Object createProxy(Object object) {
+        // 因为这个方法有可能被执行2次，所以这里应该有个判断
+        // 如果之前提前进行过aop操作则直接返回，知道意思就行，不写了哈
+        // 需要aop的话则返回代理对象，否则返回传入的对象
+        return object;
     }
 
     public static void main(String[] args) {

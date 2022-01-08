@@ -6,8 +6,8 @@ import com.javashitang.dependency.B;
 import lombok.SneakyThrows;
 
 import java.lang.reflect.Field;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author lilimin
@@ -16,10 +16,10 @@ import java.util.concurrent.ConcurrentHashMap;
 public class DependencyDemoV2 {
 
     private static final Map<String, Object> singletonObjects =
-            new ConcurrentHashMap<>(256);
+            new HashMap<>(256);
 
     private static final Map<String, Object> earlySingletonObjects =
-            new ConcurrentHashMap<>(256);
+            new HashMap<>(256);
 
     @SneakyThrows
     public static <T> T getBean(Class<T> beanClass) {
