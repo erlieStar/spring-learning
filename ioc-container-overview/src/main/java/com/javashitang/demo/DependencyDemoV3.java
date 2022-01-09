@@ -55,6 +55,7 @@ public class DependencyDemoV3 {
         }
         createProxy(object);
         singletonObjects.put(beanName, object);
+        singletonFactories.remove(beanName);
         earlySingletonObjects.remove(beanName);
         return (T) object;
     }
