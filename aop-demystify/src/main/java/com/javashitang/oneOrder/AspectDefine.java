@@ -16,7 +16,7 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class AspectDefine {
 
-    @Pointcut("execution(* com.javashitang.transactional.IndexService.index(..))")
+    @Pointcut("execution(* com.javashitang.oneOrder.AddressService.address(..))")
     public void a() {};
 
     @Before("a()")

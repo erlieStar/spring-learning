@@ -1,7 +1,5 @@
 package com.javashitang.oneOrder;
 
-import com.javashitang.transactional.IndexService;
-import com.javashitang.transactional.IndexServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
@@ -13,7 +11,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 public class AspectJConfig {
 
     @Bean
-    public IndexService userService() {
-        return new IndexServiceImpl();
+    public AddressService addressService() {
+        return new AddressServiceImpl();
     }
 }
