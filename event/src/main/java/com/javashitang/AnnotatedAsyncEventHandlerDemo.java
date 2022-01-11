@@ -38,4 +38,9 @@ public class AnnotatedAsyncEventHandlerDemo {
         return executorService;
     }
 
+    @EventListener
+    public void onTestEvent(TestSpringEvent event) {
+        System.out.printf("my 线程 %s, 事件 %s", Thread.currentThread().getName(), event);
+    }
+
 }
