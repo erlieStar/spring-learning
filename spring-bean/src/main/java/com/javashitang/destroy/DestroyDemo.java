@@ -12,7 +12,8 @@ import org.springframework.context.annotation.Configuration;
 public class DestroyDemo {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(DestroyDemo.class);
+        AnnotationConfigApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext(DestroyDemo.class);
         applicationContext.close();
     }
 

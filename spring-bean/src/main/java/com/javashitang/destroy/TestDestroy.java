@@ -8,7 +8,7 @@ import javax.annotation.PreDestroy;
  * @author lilimin
  * @since 2022-01-14
  */
-public class TestDestroy implements DisposableBean  {
+public class TestDestroy implements DisposableBean {
 
     @PreDestroy
     public void preDestroy() {
