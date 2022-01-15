@@ -26,8 +26,9 @@ public class AspectDefine {
 
     @Around("a()")
     public void aroundMethod(ProceedingJoinPoint joinPoint) throws Throwable {
-        System.out.println("aroundMethod");
+        System.out.println("aroundMethod-before");
         joinPoint.proceed();
+        System.out.println("aroundMethod-after");
     }
 
     @After("a()")
