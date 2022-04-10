@@ -1,7 +1,9 @@
-package com.javashitang.transactional;
+package com.javashitang.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -12,11 +14,13 @@ import javax.sql.DataSource;
 
 /**
  * @author lilimin
- * @since 2021-09-25
+ * @since 2021-04-11
  */
+
+@Configuration
 @EnableTransactionManagement
-@EnableAspectJAutoProxy
-public class AspectJConfig {
+@ComponentScan("com.javashitang")
+public class AppConfig {
 
     @Bean
     public DruidDataSource dataSource() {
@@ -42,10 +46,5 @@ public class AspectJConfig {
     @Bean
     public TransactionTemplate transactionTemplate() {
         return new TransactionTemplate(dataSourceTransactionManager());
-    }
-
-    @Bean
-    public DemoService demoService() {
-        return new DemoService();
     }
 }
